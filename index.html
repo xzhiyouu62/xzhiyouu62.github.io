@@ -1,14 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF Challenge</title>
+    <title>xzhiyouu's blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #061c1e;
+            font-family: 'Arial', sans-serif;
+        }
+        .blog-header {
+            background: linear-gradient(45deg, #23052e 0%, #0a5d51 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+        .post-card {
+            transition: all 0.3s ease;
+            transform: translateY(0);
+        }
+        .post-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+    </style>
 </head>
-<body>
-    <h1>It's nothing here</h1>
-    
-    <!-- flag{Y0u_f0und_7h3_f149} -->
-    
+<body class="bg-gray-100">
+    <header class="blog-header text-white py-20 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-5xl font-bold mb-4 animate-fade-in">xzhiyouu's blog</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="post-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="photo/photo1.jpg" alt="photo" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2">日記一</h2>
+                    <p class="text-gray-600">I don't know</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">2024/11/21</span>
+                        <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="photo/photo2.jpg" alt="photo" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2">日記二</h2>
+                    <p class="text-gray-600">不知道</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">2024/11/21</span>
+                        <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post-card bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="photo/photo3.jpg" alt="photo" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h2 class="text-2xl font-semibold mb-2">日記三</h2>
+                    <p class="text-gray-600">我也不知道</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">202411/21</span>
+                        <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 text-center">
+        <div class="container mx-auto">
+            <p>&copy; 2024 xzhiyouu</p>
+            <div class="mt-4">
+                <a href="#" class="mx-2 hover:text-blue-300">About Meeee!</a>
+                <a href="#" class="mx-2 hover:text-blue-300">Contact information</a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
