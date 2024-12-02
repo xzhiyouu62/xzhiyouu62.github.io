@@ -9,79 +9,72 @@
             background-color: #061c1e;
             font-family: 'Arial', sans-serif;
         }
-        .blog-header {
-            background: linear-gradient(45deg, #23052e 0%, #0a5d51 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-        .post-card {
-            transition: all 0.3s ease;
-            transform: translateY(0);
-        }
-        .post-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .animate-fade-in {
-            animation: fadeIn 1s ease-out;
+        .profile-gradient {
+            background: linear-gradient(90deg, #4a90e2 0%, #50c878 100%);
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="blog-header text-white py-20 text-center">
-        <div class="container mx-auto">
-            <h1 class="text-5xl font-bold mb-4 animate-fade-in">xzhiyouu's blog</h1>
+<body class="bg-gray-900 text-white">
+    <nav class="profile-gradient w-full py-4 fixed top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold">xzhiyouu's blog</div>
+            <div class="flex space-x-6">
+                <a href="index.html" class="nav-item text-white hover:text-blue-200">Home</a>
+                <a href="article.html" class="text-white hover:text-blue-200">Article</a>
+                <a href="contact.html" class="text-white hover:text-blue-200">Contact Meeee!</a>
+            </div>
         </div>
-    </header>
-    
-    <main class="container mx-auto px-4 py-8">
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="post-card bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="p-6">
-                    <h2 class="text-2xl font-semibold mb-2">Pointer Overflow CTF 2024 writeup</h2>
-                    <p class="text-gray-600">The first post.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-sm text-gray-500">2024/11/21</span>
-                        <a href="post1.html" class="text-blue-500 hover:underline">Read more</a>
+    </nav>
+
+    <main class="container mx-auto px-4 pt-24">
+        <div class="bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <img src="profile.jpg" class="w-24 h-24 rounded-full mr-6 object-cover">
+                <div>
+                    <h1 class="text-3xl font-bold text-white">xzhiyouu</h1>
+                    <p class="text-green-400">Cybersecurity learner | CTF player</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white">About Me</h2>
+                    <p class="text-gray-400 mb-4">
+                        我還在想要寫甚麼
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white">Skills</h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">C++</span>
+                        <span class="bg-purple-900 text-white px-3 py-1 rounded-full text-sm">Steganography</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="post-card bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="p-6">
-                    <h2 class="text-2xl font-semibold mb-2">1337UP LIVE CTF 2024 writeup</h2>
-                    <p class="text-gray-600">The second post.</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-sm text-gray-500">2024/11/21</span>
-                        <a href="post2.html" class="text-blue-500 hover:underline">Read more</a>
-                    </div>
+        </div>
+
+        <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-semibold mb-6 text-white">Competition experience</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400">UWSP Pointer Overflow CTF 2024</h3>
+                    <p class="text-gray-400">2024/10/09~now</p>
                 </div>
-            </div>
-            
-            <div class="post-card bg-white rounded-lg shadow-md overflow-hidden">
-                <div class="p-6">
-                    <h2 class="text-2xl font-semibold mb-2">待更新</h2>
-                    <p class="text-gray-600">......</p>
-                    <div class="mt-4 flex justify-between items-center">
-                        <span class="text-sm text-gray-500">202411/21</span>
-                        <a href="#" class="text-blue-500 hover:underline">Read more</a>
-                    </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400">1337UP LIVE CTF 2024</h3>
+                    <p class="text-gray-400">2024/11/15~11/17</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400">Nothing...</h3>
+                    <p class="text-gray-400">keep going</p>
                 </div>
             </div>
         </div>
     </main>
-    
-    <footer class="bg-gray-800 text-white py-8 text-center">
-        <div class="container mx-auto">
-            <p>&copy; 2024 xzhiyouu</p>
-            <div class="mt-4">
-                <a href="#" class="mx-2 hover:text-blue-300">About Meeee!</a>
-                <a href="#" class="mx-2 hover:text-blue-300">Contact information</a>
-            </div>
-        </div>
+
+    <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
+        <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
