@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /challenges.html
+
+# flag{r0b0ts_txt_1s_n0t_s3cur3}

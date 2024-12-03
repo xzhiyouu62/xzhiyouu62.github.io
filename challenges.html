@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>CTF Challenges</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #061c1e;
+            font-family: 'Arial', sans-serif;
+        }
+        .nav-gradient {
+            background: linear-gradient(90deg, #1a2b3c 0%, #2c3e50 100%);
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover, .nav-item:active {
+            transform: scale(1.05);
+            color: #ffffff;
+        }
+        .challenge-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(74, 222, 128, 0.1);
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(10px);
+        }
+        .challenge-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(74, 222, 128, 0.1);
+            border-color: rgba(74, 222, 128, 0.3);
+        }
+        .challenge-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #4ade80 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glow-text {
+            text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="nav-gradient w-full py-4 fixed top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold">CTF Challenges</div>
+            <div class="flex space-x-6">
+                <a href="index.html" class="nav-item text-white hover:text-green-400">Home</a>
+                <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
+                <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
+                <a href="terminal.html" class="nav-item text-white hover:text-green-400">Terminal</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 pt-24">
+        <div class="bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+            <h1 class="text-3xl font-bold text-white mb-8 text-center glow-text">CTF Challenges</h1>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- HTML Comment Challenge -->
+                <div class="challenge-card rounded-lg p-6">
+                    <i class="fas fa-code challenge-icon"></i>
+                    <h2 class="text-2xl font-semibold text-green-400 mb-4">HTML Comment</h2>
+                    <p class="text-gray-400">檢查source code</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Difficulty: Medium</span>
+                        <span class="bg-green-900 text-green-400 text-xs px-2 py-1 rounded-full">Web</span>
+                    </div>
+                </div>
+
+                <!-- Terminal Hidden File Challenge -->
+                <div class="challenge-card rounded-lg p-6">
+                    <i class="fas fa-terminal challenge-icon"></i>
+                    <h2 class="text-2xl font-semibold text-green-400 mb-4">Terminal Hidden File</h2>
+                    <p class="text-gray-400">在終端機中找到隱藏檔案</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Difficulty: Easy</span>
+                        <span class="bg-green-900 text-green-400 text-xs px-2 py-1 rounded-full">Linux</span>
+                    </div>
+                </div>
+
+                <!-- XSS Challenge -->
+                <div class="challenge-card rounded-lg p-6">
+                    <i class="fas fa-bug challenge-icon"></i>
+                    <h2 class="text-2xl font-semibold text-green-400 mb-4">XSS Challenge</h2>
+                    <p class="text-gray-400">在留言板中嘗試注入 XSS payload</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Difficulty: Medium</span>
+                        <span class="bg-green-900 text-green-400 text-xs px-2 py-1 rounded-full">Security</span>
+                    </div>
+                </div>
+
+                <!-- Konami Code Challenge -->
+                <div class="challenge-card rounded-lg p-6">
+                    <i class="fas fa-keyboard challenge-icon"></i>
+                    <h2 class="text-2xl font-semibold text-green-400 mb-4">Konami Code</h2>
+                    <p class="text-gray-400">Enter Konami Code in /article.html</p>
+                    <div class="mt-4 flex justify-between items-center">
+                        <span class="text-sm text-gray-500">Difficulty: Medium</span>
+                        <span class="bg-green-900 text-green-400 text-xs px-2 py-1 rounded-full">Easter Egg</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
+        <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
+    </footer>
+</body>
+</html> 
