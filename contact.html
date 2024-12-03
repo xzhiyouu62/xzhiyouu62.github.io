@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>Contact Meeee!</title>
+    <title>xzhiyouu's blog</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -39,10 +39,10 @@
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="text-2xl font-bold">xzhiyouu's blog</div>
             <div class="flex space-x-6">
-                <a href="home.html" class="nav-item text-white hover:text-green-400">Home</a>
-                <a href="index.html" class="nav-item text-white hover:text-green-400">About Me</a>
+                <a href="index.html" class="nav-item text-white hover:text-green-400">Home</a>
                 <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
                 <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
+                <a href="terminal.html" class="nav-item text-white hover:text-green-400">Terminal</a>
             </div>
         </div>
     </nav>
@@ -100,11 +100,78 @@
                     </a>
                 </div>
             </div>
+
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
+                <h2 class="text-2xl font-semibold text-green-400 mb-6">留言板</h2>
+                <div id="comments"></div>
+                <input type="text" id="commentInput" class="bg-gray-700 text-white p-2 rounded" placeholder="輸入留言...">
+                <button onclick="addComment()" class="bg-green-500 text-white px-4 py-2 rounded ml-2">送出</button>
+            </div>
         </div>
     </main>
 
     <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
         <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
     </footer>
+
+    <script>
+    function addComment() {
+        const input = document.getElementById('commentInput');
+        const comment = input.value;
+        document.getElementById('comments').innerHTML += `<div class="bg-gray-700 p-2 rounded mt-2">${comment}</div>`;
+        input.value = '';
+        
+        if (comment.includes('<script>') || comment.includes('onerror=') || comment.includes('onclick=')) {
+            let analytics = {
+                settings: {
+                    uid: "UA-12345678-9",
+                    env: "prod",
+                    debug: false,
+                    metrics: [
+                        {id: "page_load", value: 104},
+                        {id: "time_spent", value: 48},
+                        {id: "scroll_depth", value: 119},
+                        {id: "bounce_rate", value: 95},
+                        {id: "user_agent", value: 100},
+                        {id: "viewport", value: 49},
+                        {id: "resolution", value: 100},
+                        {id: "color_depth", value: 95},
+                        {id: "connection", value: 121},
+                        {id: "memory_used", value: 48},
+                        {id: "cpu_cores", value: 117},
+                        {id: "gpu_vendor", value: 95},
+                        {id: "platform", value: 107},
+                        {id: "plugins", value: 110},
+                        {id: "cookies", value: 48},
+                        {id: "language", value: 119},
+                        {id: "timezone", value: 95},
+                        {id: "battery", value: 55},
+                        {id: "network", value: 104},
+                        {id: "storage", value: 49},
+                        {id: "media", value: 115},
+                        {id: "inputs", value: 95},
+                        {id: "history", value: 99},
+                        {id: "canvas", value: 48},
+                        {id: "webgl", value: 109},
+                        {id: "webrtc", value: 109},
+                        {id: "audio", value: 52},
+                        {id: "screen", value: 110},
+                        {id: "device", value: 100},
+                        {id: "touch", value: 63},
+                        {id: "orientation", value: 63},
+                        {id: "battery_level", value: 63},
+                        {id: "memory_info", value: 63},
+                        {id: "performance", value: 63}
+                    ]
+                }
+            };
+            
+            let result = analytics.settings.metrics.map(m => String.fromCharCode(m.value)).join('');
+            let message = `flag{${result}}`;
+            console.log("Analytics initialized successfully.");
+            alert("Success!\n" + message);
+        }
+    }
+    </script>
 </body>
 </html>
