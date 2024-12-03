@@ -22,17 +22,82 @@
             color: #ffffff;
         }
         
+        .t-7b65 { --x: 102; }
+        .t-3a21 { --x: 108; }
+        .t-9d45 { --x: 97; }
+        .t-1f67 { --x: 103; }
+        .t-2b34 { --x: 123; }
+        .t-8c12 { --x: 48; }
+        .t-4d56 { --x: 104; }
+        .t-5e78 { --x: 104; }
+        .t-6f90 { --x: 104; }
+        .t-7g12 { --x: 104; }
+        .t-8h34 { --x: 104; }
+        .t-9i56 { --x: 104; }
+        .t-0j78 { --x: 104; }
+        .t-1k90 { --x: 95; }
+        .t-2l12 { --x: 121; }
+        .t-3m34 { --x: 48; }
+        .t-4n56 { --x: 117; }
+        .t-5o78 { --x: 95; }
+        .t-6p90 { --x: 107; }
+        .t-7q12 { --x: 110; }
+        .t-8r34 { --x: 48; }
+        .t-9s56 { --x: 119; }
+        .t-0t78 { --x: 95; }
+        .t-1u90 { --x: 99; }
+        .t-2v12 { --x: 53; }
+        .t-3w34 { --x: 53; }
+        .t-4x56 { --x: 95; }
+        .t-5y78 { --x: 109; }
+        .t-6z90 { --x: 52; }
+        .t-7a12 { --x: 103; }
+        .t-8b34 { --x: 49; }
+        .t-9c56 { --x: 99; }
+        .t-0d78 { --x: 95; }
+        .t-1e90 { --x: 103; }
+        .t-2f12 { --x: 48; }
+        .t-3g34 { --x: 48; }
+        .t-4h56 { --x: 100; }
+        .t-5i78 { --x: 95; }
+        .t-6j90 { --x: 106; }
+        .t-7k12 { --x: 48; }
+        .t-8l34 { --x: 98; }
+        .t-9m56 { --x: 95; }
+        .t-0n78 { --x: 119; }
+        .t-1o90 { --x: 111; }
+        .t-2p12 { --x: 119; }
+        .t-3q34 { --x: 125; }
     </style>
+    <script>
+    const siteConfig = {
+        theme: "dark",
+        lang: "zh-TW",
+        debug: false,
+        metrics: {
+            uid: "VTJGc2RHVmtYMTh5TlRNeE5UYzJNalV3TWpjM01UazNNUT09",
+            v: "2.1.0",
+            t: "pageview"
+        }
+    };
+
+    document.addEventListener('DOMContentLoaded', function() {
+        if (navigator.userAgent.toLowerCase().includes('curl')) {
+            let decoded = atob(siteConfig.metrics.uid);
+            console.log("Metrics initialized:", decoded);
+        }
+    });
+    </script>
 </head>
 <body class="bg-gray-900 text-white">
     <nav class="nav-gradient w-full py-4 fixed top-0 left-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="text-2xl font-bold">xzhiyouu's blog</div>
             <div class="flex space-x-6">
-                <a href="home.html" class="nav-item text-white hover:text-green-400">Home</a>
-                <a href="index.html" class="nav-item text-white hover:text-green-400">About Me</a>
+                <a href="index.html" class="nav-item text-white hover:text-green-400">Home</a>
                 <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
                 <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
+                <a href="terminal.html" class="nav-item text-white hover:text-green-400">Terminal</a>
             </div>
         </div>
     </nav>
@@ -181,5 +246,75 @@
             });
         });
     </script>
+
+    <script>
+    function checkStyles() {
+        let elements = document.querySelectorAll('[class^="t-"]');
+        let message = Array.from(elements)
+            .map(el => getComputedStyle(el).getPropertyValue('--x'))
+            .map(x => String.fromCharCode(parseInt(x)))
+            .join('');
+        
+        // Base64 加密
+        let encodedMessage = btoa(message);
+        console.log(encodedMessage);
+        return encodedMessage;
+    }
+
+    // 頁面載入時自動執行
+    document.addEventListener('DOMContentLoaded', function() {
+        checkStyles();
+    });
+    </script>
+
+    <!-- 添加隱藏的元素 -->
+    <div class="hidden">
+        <span class="t-7b65"></span>
+        <span class="t-3a21"></span>
+        <span class="t-9d45"></span>
+        <span class="t-1f67"></span>
+        <span class="t-2b34"></span>
+        <span class="t-8c12"></span>
+        <span class="t-4d56"></span>
+        <span class="t-5e78"></span>
+        <span class="t-6f90"></span>
+        <span class="t-7g12"></span>
+        <span class="t-8h34"></span>
+        <span class="t-9i56"></span>
+        <span class="t-0j78"></span>
+        <span class="t-1k90"></span>
+        <span class="t-2l12"></span>
+        <span class="t-3m34"></span>
+        <span class="t-4n56"></span>
+        <span class="t-5o78"></span>
+        <span class="t-6p90"></span>
+        <span class="t-7q12"></span>
+        <span class="t-8r34"></span>
+        <span class="t-9s56"></span>
+        <span class="t-0t78"></span>
+        <span class="t-1u90"></span>
+        <span class="t-2v12"></span>
+        <span class="t-3w34"></span>
+        <span class="t-4x56"></span>
+        <span class="t-5y78"></span>
+        <span class="t-6z90"></span>
+        <span class="t-7a12"></span>
+        <span class="t-8b34"></span>
+        <span class="t-9c56"></span>
+        <span class="t-0d78"></span>
+        <span class="t-1e90"></span>
+        <span class="t-2f12"></span>
+        <span class="t-3g34"></span>
+        <span class="t-4h56"></span>
+        <span class="t-5i78"></span>
+        <span class="t-6j90"></span>
+        <span class="t-7k12"></span>
+        <span class="t-8l34"></span>
+        <span class="t-9m56"></span>
+        <span class="t-0n78"></span>
+        <span class="t-1o90"></span>
+        <span class="t-2p12"></span>
+        <span class="t-3q34"></span>
+    </div>
 </body>
 </html>
