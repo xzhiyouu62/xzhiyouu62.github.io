@@ -2,72 +2,128 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>xzhiyouu's blog</title>
+    <title>Index</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
         body {
             background-color: #061c1e;
             font-family: 'Arial', sans-serif;
         }
-        .profile-gradient {
-            background: linear-gradient(90deg, #4a90e2 0%, #50c878 100%);
+        .nav-gradient {
+            background: linear-gradient(90deg, #1a2b3c 0%, #2c3e50 100%);
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover {
+            transform: scale(1.05);
+            color: #ffffff;
+        }
+        .terminal {
+            background-color: rgba(26, 26, 26, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(74, 144, 226, 0.1);
+        }
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+        }
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 8px;
+        }
+        .terminal-close { background-color: #ff5f56; }
+        .terminal-minimize { background-color: #ffbd2e; }
+        .terminal-maximize { background-color: #27c93f; }
+        .terminal-content {
+            color: #00ff00;
+            line-height: 1.6;
+        }
+        .terminal-line {
+            margin: 0;
+            padding: 3px 0;
+            display: none;
+            animation: fadeIn 0.5s forwards;
+        }
+        .terminal-prompt {
+            color: #00ff00;
+        }
+        .terminal-output {
+            color: #ffffff;
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover, .nav-item:active {
+            transform: scale(1.05);
+            color: #ffffff;
+        }
+        @keyframes fadeIn {
+            from { 
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .terminal-input {
+            background: transparent;
+            border: none;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            font-size: 1em;
+            margin-left: 8px;
+            width: 80%;
+            outline: none;
+        }
+        .command-line {
+            display: flex;
+            align-items: center;
+        }
+        #command-history {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
-    <nav class="profile-gradient w-full py-4 fixed top-0 left-0 z-50">
+    <nav class="nav-gradient w-full py-4 fixed top-0 left-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="text-2xl font-bold">xzhiyouu's blog</div>
             <div class="flex space-x-6">
-                <a href="index.html" class="nav-item text-white hover:text-blue-200">Home</a>
-                <a href="article.html" class="text-white hover:text-blue-200">Article</a>
-                <a href="contact.html" class="text-white hover:text-blue-200">Contact Meeee!</a>
+                <a href="home.html" class="nav-item text-white hover:text-green-400">Home</a>
+                <a href="index.html" class="nav-item text-white hover:text-green-400">About Me</a>
+                <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
+                <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
             </div>
         </div>
     </nav>
 
     <main class="container mx-auto px-4 pt-24">
-        <div class="bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
-            <div class="flex items-center mb-6">
-                <img src="profile.jpg" class="w-24 h-24 rounded-full mr-6 object-cover">
-                <div>
-                    <h1 class="text-3xl font-bold text-white">xzhiyouu</h1>
-                    <p class="text-green-400">Cybersecurity learner | CTF player</p>
-                </div>
+        <!-- 終端機區塊 -->
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="terminal-button terminal-close"></div>
+                <div class="terminal-button terminal-minimize"></div>
+                <div class="terminal-button terminal-maximize"></div>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4 text-white">About Me</h2>
-                    <p class="text-gray-400 mb-4">
-                        我還在想要寫甚麼
-                    </p>
-                </div>
-
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4 text-white">Skills</h2>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-500 text-white px-3 py-1 rounded-full text-sm">C++</span>
-                        <span class="bg-purple-900 text-white px-3 py-1 rounded-full text-sm">Steganography</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 class="text-2xl font-semibold mb-6 text-white">Competition experience</h2>
-            <div class="grid md:grid-cols-3 gap-4">
-                <div class="bg-gray-700 p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold text-green-400">UWSP Pointer Overflow CTF 2024</h3>
-                    <p class="text-gray-400">2024/10/09~now</p>
-                </div>
-                <div class="bg-gray-700 p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold text-green-400">1337UP LIVE CTF 2024</h3>
-                    <p class="text-gray-400">2024/11/15~11/17</p>
-                </div>
-                <div class="bg-gray-700 p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold text-green-400">Nothing...</h3>
-                    <p class="text-gray-400">keep going</p>
+            <div class="terminal-content">
+                <div id="command-history"></div>
+                <div class="command-line">
+                    <span class="terminal-prompt">xzhiyouu@xzhiyouu:~$</span>
+                    <input type="text" id="command-input" class="terminal-input" autofocus>
                 </div>
             </div>
         </div>
@@ -76,5 +132,91 @@
     <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
         <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
     </footer>
+
+    <!--終端機指令-->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const commandInput = document.getElementById('command-input');
+            const commandHistory = document.getElementById('command-history');
+            
+            // 添加 Ubuntu 歡迎訊息
+            const welcomeMessage = `Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-88-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of ${new Date().toLocaleString()}
+  System load:  0.02               Users logged in:       1
+  Usage of /:   65.2% of 30.88GB   IPv4 address:         127.0.0.1
+  Memory usage: 40%                Swap usage:           0%
+  Processes:    258                Temperature:          45.0 C
+
+ * Introducing Expanded Security Maintenance for Applications.
+   Receive updates to over 25,000 software packages with your
+   Ubuntu Pro subscription. Free for personal use.
+
+     https://ubuntu.com/pro
+
+Last login: ${new Date().toLocaleString()} from 127.0.0.1
+Type 'help' to see available commands.
+
+`;
+            
+            // 顯示歡迎訊息
+            const welcomeLine = document.createElement('div');
+            welcomeLine.className = 'terminal-output';
+            welcomeLine.style.whiteSpace = 'pre-line';
+            welcomeLine.innerText = welcomeMessage;
+            commandHistory.appendChild(welcomeLine);
+
+            const commands = {
+                'help': '可用指令：\nhelp - 顯示此幫助\nls - 列出檔案\npwd - 顯示目前路徑\nwhoami - 顯示使用者資訊\ncat [file] - 顯示檔案內容\nclear - 清除畫面',
+                'ls': 'skills.txt  about.txt',
+                'pwd': '/home/xzhiyouu',
+                'whoami': 'xzhiyouu',
+                'cat': {
+                    'skills.txt': '- C++ \n- Python',
+                    'about.txt': 'Cybersecurity learner & CTF Player'
+                },
+                'clear': 'CLEAR'
+            };
+
+            commandInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    const command = this.value.trim();
+                    const output = executeCommand(command);
+                    
+                    // 添加指令到歷史記錄
+                    const commandLine = document.createElement('div');
+                    commandLine.innerHTML = `<span class="terminal-prompt">xzhiyouu@xzhiyouu:~$</span> ${command}`;
+                    commandHistory.appendChild(commandLine);
+                    
+                    // 添加輸出
+                    if (output !== 'CLEAR') {
+                        const outputLine = document.createElement('div');
+                        outputLine.className = 'terminal-output';
+                        outputLine.innerText = output;
+                        commandHistory.appendChild(outputLine);
+                    } else {
+                        commandHistory.innerHTML = '';
+                    }
+                    
+                    this.value = '';
+                    this.scrollIntoView();
+                }
+            });
+
+            function executeCommand(command) {
+                const [cmd, ...args] = command.split(' ');
+                
+                if (cmd === 'cat' && args.length > 0) {
+                    return commands.cat[args[0]] || `cat: ${args[0]}: No such file or directory`;
+                }
+                
+                return commands[cmd] || `Command not found: ${cmd}`;
+            }
+        });
+    </script>
 </body>
 </html>
