@@ -4,34 +4,33 @@
     <meta charset="UTF-8">
     <title>Contact Meeee!</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             background-color: #061c1e;
             font-family: 'Arial', sans-serif;
         }
         .nav-gradient {
-            background: linear-gradient(90deg, #4a90e2 0%, #50c878 100%);
+            background: linear-gradient(90deg, #1a2b3c 0%, #2c3e50 100%);
         }
         .contact-item {
             transition: transform 0.3s ease;
         }
         .contact-item:hover {
+            transform: scale(1.02);
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover, .nav-item:active {
             transform: scale(1.05);
-        }
-        .image-row {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-        .image-row img {
-            width: 350px;
-            height: auto;
-            margin: 0 10px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-        .image-row img:hover {
-            transform: scale(1.1);
+            color: #ffffff;
         }
     </style>
 </head>
@@ -40,45 +39,68 @@
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="text-2xl font-bold">xzhiyouu's blog</div>
             <div class="flex space-x-6">
-                <a href="index.html" class="nav-item text-white hover:text-blue-200">Home</a>
-                <a href="article.html" class="text-white hover:text-blue-200">Article</a>
-                <a href="contact.html" class="text-white hover:text-blue-200">Contact Meeee!</a>
+                <a href="home.html" class="nav-item text-white hover:text-green-400">Home</a>
+                <a href="index.html" class="nav-item text-white hover:text-green-400">About Me</a>
+                <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
+                <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
             </div>
         </div>
     </nav>
 
     <main class="container mx-auto px-4 pt-24">
-        <div class="bg-gray-800 rounded-lg shadow-lg p-8">
-            <h1 class="text-3xl font-bold mb-6 text-white">Contact Me</h1>
-            
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <h2 class="text-2xl font-semibold mb-4 text-green-400">Contact Information</h2>
-                    <div class="space-y-4">
-                        <div class="contact-item bg-gray-700 p-4 rounded-lg flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span>nelson970602@gmail.com</span>
-                        </div>
-                        <div class=" "></div>
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+                <h1 class="text-3xl font-bold text-white mb-8 text-center">與我聯繫</h1>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <h2 class="text-2xl font-semibold text-green-400 mb-6">聯絡方式</h2>
+                        
+                        <a href="mailto:nelson970602@gmail.com" class="contact-item bg-gray-700 p-4 rounded-lg flex items-center hover:bg-gray-600">
+                            <div class="bg-blue-500 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold">Email</h3>
+                                <p class="text-gray-400">nelson970602@gmail.com</p>
+                            </div>
+                        </a>
 
-                        <a href = "https://github.com/xzhiyouu62">
-                        <div class="contact-item bg-gray-700 p-4 rounded-lg flex items-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2v-2.5a.5.5 0 00-.5-.5h-11a.5.5 0 00-.5.5V19a2 2 0 002 2zm0 0V9a2 2 0 012-2h4a2 2 0 012 2v10m-6-3h6" />
-                            </svg>
-                            <span>GitHub: xzhiyouu62</span>
-                        </div>
+                        <a href="https://github.com/xzhiyouu62" target="_blank" class="contact-item bg-gray-700 p-4 rounded-lg flex items-center hover:bg-gray-600">
+                            <div class="bg-purple-700 p-3 rounded-full mr-4">
+                                <i class="fab fa-github text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold">GitHub</h3>
+                                <p class="text-gray-400">xzhiyouu62</p>
+                            </div>
                         </a>
                     </div>
+
+                    <div class="flex items-center justify-center">
+                        <div class="relative group">
+                            <a href="https://www.youtube.com/watch?v=LzzW_TBL558" target="_blank">
+                                <img src="chiikawa.gif" alt="chiikawa" class="rounded-lg shadow-lg transform transition-transform group-hover:scale-105">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="image-row">
-                    <a href="https://www.youtube.com/watch?v=LzzW_TBL558" target="chiikawa_song">
-                        <img src="chiikawa.gif" alt="chiikawa">
+            </div>
+
+            <div class="bg-gray-800 rounded-lg shadow-lg p-8">
+                <h2 class="text-2xl font-semibold text-green-400 mb-6">其他平台</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <a href="https://www.instagram.com/xzhiyouu/" target="_blank" class="social-icon bg-gray-700 p-4 rounded-lg text-center hover:bg-gray-600">
+                        <i class="fab fa-instagram text-2xl text-pink-500 mb-2"></i>
+                        <p class="text-gray-400">Instagram</p>
+                    </a>
+                    <a href="https://discordapp.com/users/1143849101692252220" target="_blank" class="social-icon bg-gray-700 p-4 rounded-lg text-center hover:bg-gray-600">
+                        <i class="fab fa-discord text-2xl text-indigo-500 mb-2"></i>
+                        <p class="text-gray-400">Discord</p>
                     </a>
                 </div>
             </div>
+        </div>
     </main>
 
     <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
