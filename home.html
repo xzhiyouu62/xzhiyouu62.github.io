@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>xzhiyouu's blog</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            background-color: #061c1e;
+            font-family: 'Arial', sans-serif;
+        }
+        .nav-gradient {
+            background: linear-gradient(90deg, #1a2b3c 0%, #2c3e50 100%);
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover, .nav-item:active {
+            transform: scale(1.05);
+            color: #ffffff;
+        }
+        
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <nav class="nav-gradient w-full py-4 fixed top-0 left-0 z-50">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <div class="text-2xl font-bold">xzhiyouu's blog</div>
+            <div class="flex space-x-6">
+                <a href="home.html" class="nav-item text-white hover:text-green-400">Home</a>
+                <a href="index.html" class="nav-item text-white hover:text-green-400">About Me</a>
+                <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
+                <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 pt-24">
+        <!-- 其他內容區塊添加 content-card 類 -->
+        <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
+            <div class="flex items-center mb-6">
+                <img src="profile.jpg" class="w-24 h-24 rounded-full mr-6 object-cover">
+                <div>
+                    <h1 class="text-3xl font-bold text-white">xzhiyouu</h1>
+                    <p class="text-green-400">Cybersecurity learner | CTF player</p>
+                    <div class="flex space-x-4 mt-2">
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white">About Me</h2>
+                    <p class="text-gray-400 mb-4">
+                        我還在想要寫甚麼
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4 text-white">Skills</h2>
+                    <div class="grid grid-cols-3 gap-4">
+                        <!-- C++ -->
+                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
+                            <i class="devicon-cplusplus-plain text-4xl text-blue-500 mb-2"></i>
+                            <span class="text-white">C++</span>
+                        </div>
+
+                        <!-- Python -->
+                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
+                            <i class="devicon-python-plain text-4xl text-yellow-500 mb-2"></i>
+                            <span class="text-white">Python</span>
+                        </div>
+
+                        <!-- Steganography -->
+                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
+                            <i class="fas fa-eye text-4xl text-purple-500 mb-2"></i>
+                            <span class="text-white">Steganography</span>
+                        </div>
+
+                        <!-- Web Security -->
+                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
+                            <i class="fas fa-globe text-4xl text-green-500 mb-2"></i>
+                            <span class="text-white">Web Security</span>
+                        </div>
+
+                        <!-- Cryptography -->
+                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
+                            <i class="fas fa-key text-4xl text-red-500 mb-2"></i>
+                            <span class="text-white">Cryptography</span>
+                        </div>
+
+                        <!-- Linux -->
+                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
+                            <i class="devicon-linux-plain text-4xl text-gray-300 mb-2"></i>
+                            <span class="text-white">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-semibold mb-6 text-white">Competition experience</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400">UWSP Pointer Overflow CTF 2024</h3>
+                    <p class="text-gray-400">2024/10/09~now</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400">1337UP LIVE CTF 2024</h3>
+                    <p class="text-gray-400">2024/11/15~11/17</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-400">Nothing...</h3>
+                    <p class="text-gray-400">keep going</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
+            <h2 class="text-2xl font-semibold mb-6 text-white">My project</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition duration-300">
+                    <div class="flex justify-between items-center mb-4">
+                        <i class="fab fa-github text-2xl text-white"></i>
+                        <span class="bg-purple-500 text-xs px-2 py-1 rounded-full">ongoing</span>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white">test</h3>
+                    <p class="text-gray-400 mt-2">testing</p>
+                    <div class="flex gap-2 mt-4">
+                        <span class="text-xs bg-gray-600 px-2 py-1 rounded">Python</span>
+                        <span class="text-xs bg-gray-600 px-2 py-1 rounded">Security</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
+            <h2 class="text-2xl font-semibold mb-6 text-white">推薦資源</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="https://ctftime.org/" target="_blank" class="block bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition duration-300">
+                    <div class="flex items-center mb-2">
+                        <i class="fas fa-flag text-2xl text-red-500 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-white">CTFtime</h3>
+                    </div>
+                    <p class="text-gray-400 mt-2">全球 CTF 比賽資訊和排名平台</p>
+                </a>
+                <a href="https://picoctf.com/" target="_blank" class="block bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition duration-300">
+                    <div class="flex items-center mb-2">
+                        <img src="picoCTF.png" alt="PicoCTF" class="w-8 h-8 mr-3">
+                        <h3 class="text-lg font-semibold text-white">PicoCTF</h3>
+                    </div>
+                    <p class="text-gray-400 mt-2">CTF初學者練習平台</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
+        <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lines = document.querySelectorAll('.terminal-line');
+            let delay = 0;
+            
+            lines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.display = 'block';
+                }, delay);
+                delay += 500; // 每行延遲 500ms
+            });
+        });
+    </script>
+</body>
+</html>
