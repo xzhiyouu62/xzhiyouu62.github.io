@@ -6,6 +6,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <style>
         body {
             background-color: #061c1e;
@@ -68,6 +70,192 @@
         .t-1o90 { --x: 111; }
         .t-2p12 { --x: 119; }
         .t-3q34 { --x: 125; }
+
+
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.8;
+        }
+
+        .glitch::before {
+            color: #0ff;
+            animation: glitch-effect 3s infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+            transform: translate(-2px, -2px);
+        }
+
+        .glitch::after {
+            color: #f0f;
+            animation: glitch-effect 3s infinite reverse;
+            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+            transform: translate(2px, 2px);
+        }
+
+        .hacker-text::before {
+            content: '>';
+            margin-right: 8px;
+            animation: blink 1s infinite;
+        }
+
+        /* 動畫關鍵幀 */
+        @keyframes glitch {
+            0% { transform: none; opacity: 1; }
+            7% { transform: skew(-0.5deg, -0.9deg); opacity: 0.75; }
+            10% { transform: none; opacity: 1; }
+            27% { transform: none; opacity: 1; }
+            30% { transform: skew(0.8deg, -0.1deg); opacity: 0.75; }
+            35% { transform: none; opacity: 1; }
+            52% { transform: none; opacity: 1; }
+            55% { transform: skew(-1deg, 0.2deg); opacity: 0.75; }
+            50% { transform: none; opacity: 1; }
+            72% { transform: none; opacity: 1; }
+            75% { transform: skew(0.4deg, 1deg); opacity: 0.75; }
+            80% { transform: none; opacity: 1; }
+            100% { transform: none; opacity: 1; }
+        }
+
+        @keyframes glitch-effect {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* 互動效果 */
+        .profile-name-container:hover .glitch {
+            animation-duration: 1s;
+        }
+
+        .profile-name-container:hover .cyberpunk-text {
+            text-shadow: 
+                0 0 10px #00ff00,
+                0 0 20px #00ff00,
+                0 0 40px #00ff00;
+        }
+
+        .terminal-text-container {
+            font-family: 'Courier New', monospace;
+            display: flex;
+            align-items: center;
+        }
+
+        .terminal-prompt {
+            color: #00ff00;
+            margin-right: 8px;
+        }
+
+        .terminal-text {
+            color: #00ff00;
+            position: relative;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .typing-name, .typing-role {
+            display: inline-block;
+        }
+
+        /* 文字發光效果 */
+        .terminal-text {
+            text-shadow: 
+                0 0 5px rgba(0, 255, 0, 0.5),
+                0 0 10px rgba(0, 255, 0, 0.3);
+        }
+
+        /* 懸浮效果 */
+        .terminal-text-container:hover .terminal-text {
+            text-shadow: 
+                0 0 5px rgba(0, 255, 0, 0.8),
+                0 0 10px rgba(0, 255, 0, 0.5),
+                0 0 15px rgba(0, 255, 0, 0.3);
+        }
+
+        .terminal-heading {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terminal-prompt {
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+        }
+
+        .terminal-cursor {
+            display: inline-block;
+            color: #ffffff;
+            font-family: 'Courier New', monospace;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        .tag {
+            animation: float 3s ease-in-out infinite;
+            animation-delay: calc(0.1s * var(--i));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            background: #00ff00;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            padding: 20px 0;
+        }
+
+        .timeline-dot {
+            width: 16px;
+            height: 16px;
+            background: #00ff00;
+            border-radius: 50%;
+        }
+
+        .timeline-content {
+            margin-left: 20px;
+            padding: 15px;
+            background: rgba(0, 255, 0, 0.1);
+            border-radius: 5px;
+        }
     </style>
     <script>
     const siteConfig = {
@@ -91,9 +279,19 @@
 </head>
 <body class="bg-gray-900 text-white">
     <nav class="nav-gradient w-full py-4 fixed top-0 left-0 z-50">
-        <div class="container mx-auto flex justify-between items-center px-4">
-            <div class="text-2xl font-bold">xzhiyouu's blog</div>
-            <div class="flex space-x-6">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-4">
+            <div class="text-2xl font-bold mb-4 md:mb-0">xzhiyouu's blog</div>
+            
+            <!-- 搜尋欄 -->
+            <div class="relative w-full md:w-1/3 mb-4 md:mb-0">
+                <input type="text" 
+                       id="searchInput"
+                       placeholder="搜尋文章..." 
+                       class="w-full bg-gray-700 border border-gray-600 rounded-lg pl-10 pr-4 py-2 text-white focus:outline-none focus:border-green-500">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+
+            <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6">
                 <a href="index.html" class="nav-item text-white hover:text-green-400">Home</a>
                 <a href="article.html" class="nav-item text-white hover:text-green-400">My Article</a>
                 <a href="contact.html" class="nav-item text-white hover:text-green-400">Contact Me</a>
@@ -102,20 +300,41 @@
         </div>
     </nav>
 
+    <!-- 搜尋結果顯示區域 -->
+    <div id="searchResults" class="fixed top-20 left-0 w-full bg-gray-800 shadow-lg rounded-lg z-40 hidden">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold text-white">搜尋結果</h3>
+                <button id="closeSearch" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div id="resultsList" class="space-y-4 max-h-96 overflow-y-auto">
+                <!-- 搜尋結果將動態插入這裡 -->
+            </div>
+        </div>
+    </div>
+
     <main class="container mx-auto px-4 pt-24">
         <!-- 其他內容區塊添加 content-card 類 -->
         <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mb-8">
             <div class="flex items-center mb-6">
                 <img src="profile.jpg" class="w-24 h-24 rounded-full mr-6 object-cover">
-                <div>
+                <div class="space-y-3">
                     <h1 class="text-3xl font-bold text-white">xzhiyouu</h1>
-                    <p class="text-green-400">Cybersecurity learner | CTF player</p>
-                    <div class="flex space-x-4 mt-2">
-                        <a href="#" class="text-gray-400 hover:text-white">
+                    <div class="space-y-1">
+                        <p class="text-green-400">>_ Cybersecurity learner</p>
+                        <p class="text-green-400">>_ CTF player</p>
+                    </div>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="https://github.com/xzhiyouu62" target="_blank" class="text-gray-400 hover:text-white">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="text-gray-400 hover:text-white">
-                            <i class="fab fa-linkedin"></i>
+                        <a href="https://www.instagram.com/xzhiyouu/" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100023965009972" target="_blank" class="text-gray-400 hover:text-white">
+                            <i class="fab fa-facebook"></i>
                         </a>
                     </div>
                 </div>
@@ -123,49 +342,45 @@
 
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
-                    <h2 class="text-2xl font-semibold mb-4 text-white">About Me</h2>
+                    <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                        <span class="terminal-prompt">></span>
+                        About Me
+                        <span class="terminal-cursor">_</span>
+                    </h2>
                     <p class="text-gray-400 mb-4">
                         我還在想要寫甚麼
                     </p>
                 </div>
 
                 <div>
-                    <h2 class="text-2xl font-semibold mb-4 text-white">Skills</h2>
-                    <div class="grid grid-cols-3 gap-4">
+                    <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                        <span class="terminal-prompt">></span>
+                        Skills
+                        <span class="terminal-cursor">_</span>
+                    </h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                        <!-- HTML -->
+                        <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                            <i class="devicon-html5-plain text-5xl text-orange-500 mb-3"></i>
+                            <span class="text-lg text-white">HTML</span>
+                        </div>
+
                         <!-- C++ -->
-                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
-                            <i class="devicon-cplusplus-plain text-4xl text-blue-500 mb-2"></i>
-                            <span class="text-white">C++</span>
+                        <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                            <i class="devicon-cplusplus-plain text-5xl text-blue-500 mb-3"></i>
+                            <span class="text-lg text-white">C++</span>
                         </div>
 
                         <!-- Python -->
-                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
-                            <i class="devicon-python-plain text-4xl text-yellow-500 mb-2"></i>
-                            <span class="text-white">Python</span>
+                        <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                            <i class="devicon-python-plain text-5xl text-yellow-500 mb-3"></i>
+                            <span class="text-lg text-white">Python</span>
                         </div>
-
-                        <!-- Steganography -->
-                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
-                            <i class="fas fa-eye text-4xl text-purple-500 mb-2"></i>
-                            <span class="text-white">Steganography</span>
-                        </div>
-
-                        <!-- Web Security -->
-                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
-                            <i class="fas fa-globe text-4xl text-green-500 mb-2"></i>
-                            <span class="text-white">Web Security</span>
-                        </div>
-
-                        <!-- Cryptography -->
-                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
-                            <i class="fas fa-key text-4xl text-red-500 mb-2"></i>
-                            <span class="text-white">Cryptography</span>
-                        </div>
-
+                        
                         <!-- Linux -->
-                        <div class="flex flex-col items-center p-4 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300">
-                            <i class="devicon-linux-plain text-4xl text-gray-300 mb-2"></i>
-                            <span class="text-white">Linux</span>
+                        <div class="flex flex-col items-center p-6 bg-gray-700 rounded-lg hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                            <i class="devicon-linux-plain text-5xl text-gray-300 mb-3"></i>
+                            <span class="text-lg text-white">Linux</span>
                         </div>
                     </div>
                 </div>
@@ -173,15 +388,19 @@
         </div>
 
         <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8">
-            <h2 class="text-2xl font-semibold mb-6 text-white">Competition experience</h2>
+            <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                <span class="terminal-prompt">></span>
+                參加過的 CTF 競賽 (可能都只解warmup題:D
+                <span class="terminal-cursor">_</span>
+            </h2>
             <div class="grid md:grid-cols-3 gap-4">
                 <div class="bg-gray-700 p-4 rounded-lg">
                     <h3 class="text-lg font-semibold text-green-400">UWSP Pointer Overflow CTF 2024</h3>
-                    <p class="text-gray-400">2024/10/09~now</p>
+                    <p class="text-gray-400">2024.10.09 - now</p>
                 </div>
                 <div class="bg-gray-700 p-4 rounded-lg">
                     <h3 class="text-lg font-semibold text-green-400">1337UP LIVE CTF 2024</h3>
-                    <p class="text-gray-400">2024/11/15~11/17</p>
+                    <p class="text-gray-400">2024.11.15 - 2024.11.17</p>
                 </div>
                 <div class="bg-gray-700 p-4 rounded-lg">
                     <h3 class="text-lg font-semibold text-green-400">Nothing...</h3>
@@ -191,43 +410,154 @@
         </div>
 
         <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
-            <h2 class="text-2xl font-semibold mb-6 text-white">My project</h2>
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition duration-300">
-                    <div class="flex justify-between items-center mb-4">
-                        <i class="fab fa-github text-2xl text-white"></i>
-                        <span class="bg-purple-500 text-xs px-2 py-1 rounded-full">ongoing</span>
+            <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                <span class="terminal-prompt">></span>
+                CTF 資源整理
+                <span class="terminal-cursor">_</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- CTF 練習平台 -->
+                <div class="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-flag text-2xl text-red-500 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-white">練習平台</h3>
                     </div>
-                    <h3 class="text-lg font-semibold text-white">test</h3>
-                    <p class="text-gray-400 mt-2">testing</p>
-                    <div class="flex gap-2 mt-4">
-                        <span class="text-xs bg-gray-600 px-2 py-1 rounded">Python</span>
-                        <span class="text-xs bg-gray-600 px-2 py-1 rounded">Security</span>
+                    <div class="space-y-3">
+                        <a href="https://picoctf.org/" target="_blank" 
+                           class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>PicoCTF
+                        </a>
+                        <a href="https://lotuxctf.com/" target="_blank"
+                           class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>LoTuX CTF
+                        </a>
+                        <a href="https://ctf.hackme.quest/" target="_blank"
+                           class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>HackMe CTF
+                        </a>    
+                        <a href="https://www.hackthebox.com/" target="_blank"
+                           class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>HackTheBox
+                        </a>
+                        <a href="https://pwn.college/" target="_blank"
+                           class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>pwn.college
+                        </a>
+                        <a href="https://cryptohack.org/" target="_blank"
+                           class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>CryptoHack
+                        </a>
+                        <a href="https://tryhackme.com/" target="_blank"
+                           class="block text-gray-400 hover:text-green-400 transition duration-300">
+                            <i class="fas fa-external-link-alt mr-2"></i>TryHackMe
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 解題工具 -->
+                <div class="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-2xl text-yellow-500 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-white">解題工具</h3>
+                    </div>
+                    <div class="space-y-3">
+                        <!-- 密碼學工具 -->
+                        <div class="mb-4">
+                            <h4 class="text-sm text-gray-400 mb-2">密碼學</h4>
+                            <a href="https://www.boxentriq.com/code-breaking/vigenere-cipher" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-key mr-2"></i>Vigenère Cipher
+                            </a>
+                            <a href="https://www.dcode.fr/caesar-cipher" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-key mr-2"></i>Caesar Cipher
+                            </a>
+                            <a href="https://quipqiup.com/" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-key mr-2"></i>QuipQiup
+                            </a>
+                            <a href="https://www.guballa.de/substitution-solver" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-key mr-2"></i>Substitution Solver
+                            </a>
+                            <a href="https://www.dcode.fr/rail-fence-cipher" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-key mr-2"></i>Rail Fence Cipher
+                            </a>
+                        </div>
+                        
+                        <!-- 隱寫術工具 -->
+                        <div class="mb-4">
+                            <h4 class="text-sm text-gray-400 mb-2">隱寫術</h4>
+                            <a href="https://aperisolve.fr/" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-image mr-2"></i>Aperi'Solve
+                            </a>
+                            <a href="https://stegonline.georgeom.net/" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-image mr-2"></i>StegOnline
+                            </a>
+                        </div>
+
+                        <!-- 其他工具 -->
+                        <div>
+                            <h4 class="text-sm text-gray-400 mb-2">其他工具</h4>
+                            <a href="https://gchq.github.io/CyberChef/" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-wrench mr-2"></i>CyberChef
+                            </a>
+                            <a href="https://www.dcode.fr/cipher-identifier" target="_blank"
+                            class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-key mr-2"></i>Cipher Identifier
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 學習資源 -->
+                <div class="bg-gray-700 p-6 rounded-lg hover:bg-gray-600 transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-book text-2xl text-blue-500 mr-3"></i>
+                        <h3 class="text-lg font-semibold text-white">學習資源</h3>
+                    </div>
+                    <div class="space-y-3">                      
+                        <div>
+                            <h4 class="text-sm text-gray-400 mb-2">比賽資訊</h4>
+                            <a href="https://ctftime.org/" target="_blank"
+                               class="block text-gray-400 hover:text-green-400 transition duration-300">
+                                <i class="fas fa-calendar-alt mr-2"></i>CTFtime - 賽事資訊
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="content-card bg-gray-800 rounded-lg shadow-lg p-8 mt-8">
-            <h2 class="text-2xl font-semibold mb-6 text-white">推薦資源</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <a href="https://ctftime.org/" target="_blank" class="block bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition duration-300">
-                    <div class="flex items-center mb-2">
-                        <i class="fas fa-flag text-2xl text-red-500 mr-3"></i>
-                        <h3 class="text-lg font-semibold text-white">CTFtime</h3>
+            <h2 class="terminal-heading text-2xl font-semibold mb-6 text-white">
+                <span class="terminal-prompt">></span>
+                最新動態
+                <span class="terminal-cursor">_</span>
+            </h2>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-green-400">2024.12.07</span>
+                        <span class="bg-blue-500 text-xs px-2 py-1 rounded-full">更新</span>
                     </div>
-                    <p class="text-gray-400 mt-2">全球 CTF 比賽資訊和排名平台</p>
-                </a>
-                <a href="https://picoctf.com/" target="_blank" class="block bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition duration-300">
-                    <div class="flex items-center mb-2">
-                        <img src="picoCTF.png" alt="PicoCTF" class="w-8 h-8 mr-3">
-                        <h3 class="text-lg font-semibold text-white">PicoCTF</h3>
+                    <p class="text-gray-400">新增 CTF 資源整理</p>
+                </div>
+                <div class="bg-gray-700 p-4 rounded-lg">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-green-400">2024.12.07</span>
+                        <span class="bg-blue-500 text-xs px-2 py-1 rounded-full">更新</span>
                     </div>
-                    <p class="text-gray-400 mt-2">CTF初學者練習平台</p>
-                </a>
+                    <p class="text-gray-400">新增文章搜尋功能</p>
+                </div>
             </div>
         </div>
-    </main>
 
     <footer class="bg-gray-900 border-t border-gray-800 text-center py-6 mt-12">
         <p class="text-gray-500">&copy; 2024 xzhiyouu. All Rights Reserved.</p>
@@ -316,5 +646,122 @@
         <span class="t-2p12"></span>
         <span class="t-3q34"></span>
     </div>
+
+    <div class="timeline">
+        <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+                <h3>2024.06.01</h3>
+                <p>Started learning Cybersecurity</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 添加搜尋功能的 JavaScript -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const resultsList = document.getElementById('resultsList');
+        const closeSearch = document.getElementById('closeSearch');
+
+        // 文章數據（從 article.html 提取）
+        const articles = [
+            {
+                title: 'Pointer Overflow CTF 2024',
+                date: '2024/11/21',
+                category: 'CTF',
+                tags: ['CTF', 'Writeup'],
+                description: 'The first CTF writeup',
+                url: 'post1.html'
+            },
+            {
+                title: '1337UP LIVE CTF 2024',
+                date: '2024/11/21',
+                category: 'CTF',
+                tags: ['CTF', 'Writeup'],
+                description: 'Second CTF writeup',
+                url: 'post2.html'
+            }
+        ];
+
+        // 搜尋功能
+        function performSearch(query) {
+            query = query.toLowerCase();
+            const results = articles.filter(article => 
+                article.title.toLowerCase().includes(query) ||
+                article.description.toLowerCase().includes(query) ||
+                article.category.toLowerCase().includes(query)
+            );
+
+            displayResults(results);
+        }
+
+        // 顯示搜尋結果
+        function displayResults(results) {
+            resultsList.innerHTML = '';
+            
+            if (results.length === 0) {
+                resultsList.innerHTML = `
+                    <div class="text-center text-gray-400 py-4">
+                        <i class="fas fa-search mb-2"></i>
+                        <p>沒有找到相關文章</p>
+                    </div>
+                `;
+                return;
+            }
+
+            results.forEach(article => {
+                const articleElement = document.createElement('div');
+                articleElement.className = 'bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition duration-300';
+                articleElement.innerHTML = `
+                    <a href="${article.url}" class="block">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-green-400">${article.date}</span>
+                            <div class="flex gap-2">
+                                ${article.tags.map(tag => 
+                                    `<span class="bg-gray-600 text-xs px-2 py-1 rounded-full">${tag}</span>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <h4 class="text-white font-semibold mb-2">${article.title}</h4>
+                        <p class="text-gray-400 text-sm">${article.description}</p>
+                    </a>
+                `;
+                resultsList.appendChild(articleElement);
+            });
+        }
+
+        // 事件監聽器
+        let searchTimeout;
+        searchInput.addEventListener('input', function(e) {
+            clearTimeout(searchTimeout);
+            const query = e.target.value.trim();
+            
+            if (query.length >= 2) {
+                searchTimeout = setTimeout(() => {
+                    performSearch(query);
+                    searchResults.classList.remove('hidden');
+                }, 300);
+            } else {
+                searchResults.classList.add('hidden');
+            }
+        });
+
+        closeSearch.addEventListener('click', function() {
+            searchResults.classList.add('hidden');
+            searchInput.value = '';
+        });
+
+        // 點擊外部關閉搜尋結果
+        document.addEventListener('click', function(e) {
+            if (!searchResults.contains(e.target) && 
+                !searchInput.contains(e.target) && 
+                !searchResults.classList.contains('hidden')) {
+                searchResults.classList.add('hidden');
+            }
+        });
+    });
+    </script>
 </body>
 </html>
